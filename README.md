@@ -36,7 +36,8 @@ git仓库：
     1) CenterService 监听的端口是9100
     2) ChatService 端口是在config/app.json里面配置
     3) Gateway grpc的端口配的是9109，针对客户端的端口是9108
-6. 客户端代码在：https://github.com/tap2joy/ChatClient.git。拉取后同样要执行: git submodule init, git submodule update，将协议库拉取下来
+6. 每个服务代码目录下都有restart.sh，在linux系统下可以直接执行: bash restart.sh 进行重启服务或新开服务
+7. 支持容器部署，执行docker build命令打镜像，执行docker run启动
 
 ## 三. 客户端的使用
 1. 可以直接使用：https://github.com/tap2joy/ChatBin.git 下面ChatClient的exe启动客户端。
