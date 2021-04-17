@@ -26,9 +26,11 @@ git仓库：
     2) https://github.com/tap2joy/ChatService.git
     3) https://github.com/tap2joy/Gateway.git
 4. 在对应的目录下执行: 
-    > git submodule init
-    > git submodule update
-    > go build
+    ```shell
+    git submodule init
+    git submodule update
+    go build
+    ```
 5. 依次启动CenterService, ChatService, Gateway
     1) CenterService 监听的端口是9100
     2) ChatService 端口是在config/app.json里面配置
