@@ -24,7 +24,7 @@ git仓库：
 ![alt text](http://www.tap2joy.com/images/server.png "服务器架构图")
 
 ## 服务器部署
-1. 准备数据库。ChatService有用到postgresql数据库，创建好名字为chat_db的数据库，owner为postgres，密码为6个1，可在config/app.json中修改
+1. 准备数据库。ChatService有用到postgresql数据库。创建好名字为chat_db的数据库，数据库相关参数可在config/app.json中修改
    数据库相关操作：
    ```shell
     psql -U postgres -W 111111
