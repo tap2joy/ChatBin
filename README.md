@@ -5,9 +5,9 @@ git仓库：
 * 协议库：https://github.com/tap2joy/Protocols.git
 * 客户端：https://github.com/tap2joy/ChatClient.git
 * 服务器：
-        * https://github.com/tap2joy/CenterService.git
-        * https://github.com/tap2joy/ChatService.git
-        * https://github.com/tap2joy/Gateway.git
+        1. https://github.com/tap2joy/CenterService.git
+        2. https://github.com/tap2joy/ChatService.git
+        3. https://github.com/tap2joy/Gateway.git
 
 ## 一. 服务器结构
 整个服务器分为3块：中心服务器(CenterService)，聊天服务(ChatService)和网关服(Gateway)。
