@@ -25,6 +25,11 @@ git仓库：
 
 ## 服务器部署
 1. 准备数据库。ChatService有用到postgresql数据库，创建好名字为chat_db的数据库，owner为postgres，密码为6个1，可在config/app.json中修改
+   数据库相关操作：
+   ```shell
+    psql -U postgres -W 111111
+    create database chat_db owner postgres;
+    ```
 2. 如过你是windows操作系统，直接拉取仓库：https://github.com/tap2joy/ChatBin.git，执行根目录下的start.bat即可开启服务器
 3. 如果你想通过代码构建部署，那么需要先拉取仓库：
     1) https://github.com/tap2joy/CenterService.git
