@@ -9,7 +9,11 @@ git仓库：
 * https://github.com/tap2joy/ChatService.git 聊天服务
 * https://github.com/tap2joy/Gateway.git 网关服
 
-## 一. 服务器结构
+## 协议设计
+1. TCP通信，设计了一个简单的包头，第一个4字节表示包长，第二个4字节表示协议ID，后面跟protobuf包体
+2. 在common里面定义了通用的错误码，消息id和通用错误消息包
+3. 使用bufio.NewScanner处理粘包问题
+## 服务器结构
 整个服务器分为3块：<b>中心服务器(CenterService)</b>，<b>聊天服务(ChatService)</b>和<b>网关服(Gateway)</b>
 1. 中心服务器目前是做成单节点，负责服务注册和服务发现，以及在线玩家的管理。
 2. 中心服务器3秒内未收到服务发来的心跳，则视为已超时，并定时清理超时的服务。
@@ -19,7 +23,7 @@ git仓库：
 6. 客户端与网关服采用TCP长链接通信，服务器之间采用rpc通信
 ![alt text](http://www.tap2joy.com/images/server.png "服务器架构图")
 
-## 二. 服务器部署
+## 服务器部署
 1. 准备数据库。ChatService有用到postgresql数据库，创建好名字为chat_db的数据库，owner为postgres，密码为6个1，可在config/app.json中修改
 2. 如过你是windows操作系统，直接拉取仓库：https://github.com/tap2joy/ChatBin.git，执行根目录下的start.bat即可开启服务器
 3. 如果你想通过代码构建部署，那么需要先拉取仓库：
@@ -39,7 +43,7 @@ git仓库：
 6. 每个服务代码目录下都有restart.sh，在linux系统下可以直接执行: bash restart.sh 进行重启服务或新开服务
 7. 支持容器部署，执行docker build命令打镜像，执行docker run启动
 
-## 三. 客户端的使用
+## 客户端的使用
 1. 可以直接使用：https://github.com/tap2joy/ChatBin.git 下面ChatClient的exe启动客户端。
    配置默认连的远程云服，如果要连本地，则使用client_local.json.
 2. 客户端启动后会显示网络连接成功，并自动拉取当前可用的聊天室列表。然后输入要进去的聊天室id和昵称，即可开始聊天
@@ -69,6 +73,10 @@ git仓库：
 3. xorm: 数据库操作
 4. pq：postgresql驱动
 5. viper：json文件读取
+
+## 单元测试
+1. 进入test目录，执行go test
+2. grpc测试，在test/shell目录下，执行对应的shell
 
 ## API
 1. CenterService
