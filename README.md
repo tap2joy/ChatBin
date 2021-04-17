@@ -44,6 +44,7 @@ git仓库：
 2. 输入：/popular n，会显示n 秒内使用频率最高的单词，如果没有会提示 empty，如果时间参数未传，会提示参数错误。
 3. 输入：/stats [user] 会显示指定用户的本次在线时长，如果用户不存在，会提示 user not exist.
 4. 输入：/switch [id] 会切换到指定id的聊天室，并自动拉取聊天记录
+![alt text](http://www.tap2joy.com/images/chat.png "客户端截图")
 
 ## 相关算法
 1. 敏感词过滤，采用的TrieTree字典树处理，匹配效率高
