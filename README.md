@@ -76,58 +76,58 @@ git仓库：
         * 返回：
             * OldUser: 如果当前用户已经在其他gate登录了，则返回老的用户信息，否则为空
     2) UserOffline 用户下线
-        参数：
-            Name: 用户名字
+        * 参数：
+            * Name: 用户名字
     3) ChangeChannel 切换聊天室
-        参数：
-            Name: 用户名字
-            Channel: 目标聊天室id
+        * 参数：
+            * Name: 用户名字
+            * Channel: 目标聊天室id
     4) GetUserOnlineTime 获取用户在线时长
-        参数：
-            Name: 用户名字
-        返回：
-            Duration: 在线时长，单位秒
+        * 参数：
+            * Name: 用户名字
+        * 返回：
+            * Duration: 在线时长，单位秒
     5) GetOnlineUsers 获取在线用户列表
-        参数：
-            Channel: 聊天室id
-        返回：
-            Users: 用户列表
+        * 参数：
+            * Channel: 聊天室id
+        * 返回：
+            * Users: 用户列表
     6) RegisterService 注册服务
-        参数：
-            Type：服务类型
-            Address: 服务地址
+        * 参数：
+            * Type：服务类型
+            * Address: 服务地址
     7) GetServices 获取可用服务列表
-        参数：
-            Type：服务类型
-        返回：
-            List：服务列表
+        * 参数：
+            * Type：服务类型
+        * 返回：
+            * List：服务列表
 
 2. ChatService
     1) SendMessage 发送聊天消息
-        参数：
-            SenderName：发送者名字
-            Channel：聊天室id
-            Content：内容
-            System：是否是系统消息
-        返回：
-            Result：gm命令的返回值
+        * 参数：
+            * SenderName：发送者名字
+            * Channel：聊天室id
+            * Content：内容
+            * System：是否是系统消息
+        * 返回：
+            * Result：gm命令的返回值
     2) GetChatLog 获取聊天记录
-        参数：
-            Channel：聊天室id
-        返回：
-            Logs：聊天记录
+        * 参数：
+            * Channel：聊天室id
+        * 返回：
+            * Logs：聊天记录
     3) GetChannelList 获取聊天室列表
-        返回：
-            List：聊天室列表
+        * 返回：
+            * List：聊天室列表
 
 3. Gateway
     1) PushMessage 推送消息
-        参数：
-            SenderName：发送者名字
-            Content：内容
-            UserNames：目标玩家列表
-            Timestamp：时间戳
+        * 参数：
+            * SenderName：发送者名字
+            * Content：内容
+            * UserNames：目标玩家列表
+            * Timestamp：时间戳
     2) KickUser 踢出用户
-        参数：
-            Name: 用户名字
-            Gate: 网关地址
+        * 参数：
+            * Name: 用户名字
+            * Gate: 网关地址
