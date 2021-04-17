@@ -30,7 +30,8 @@ git仓库：
     psql -U postgres -W 111111
     create database chat_db owner postgres;
     ```
-2. 如过你是windows操作系统，直接拉取仓库：https://github.com/tap2joy/ChatBin.git，执行根目录下的start.bat即可开启服务器
+2. 如过你是windows操作系统，直接拉取仓库：https://github.com/tap2joy/ChatBin.git，
+   进入到根目录下，执行start.bat即可开启服务器，执行stop.bat即可停止所有服务
 3. 如果你想通过代码构建部署，那么需要先拉取仓库：
     1) https://github.com/tap2joy/CenterService.git
     2) https://github.com/tap2joy/ChatService.git
