@@ -69,12 +69,12 @@ git仓库：
 ## API
 1. CenterService
     1) UserOnline 用户上线
-        参数：
-            Name: 用户名字
-            Gate: 所在gateway地址
-            Channel: 聊天室id
-        返回：
-            OldUser: 如果当前用户已经在其他gate登录了，则返回老的用户信息，否则为空
+        * 参数：
+            * Name: 用户名字
+            * Gate: 所在gateway地址
+            * Channel: 聊天室id
+        * 返回：
+            * OldUser: 如果当前用户已经在其他gate登录了，则返回老的用户信息，否则为空
     2) UserOffline 用户下线
         参数：
             Name: 用户名字
