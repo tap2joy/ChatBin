@@ -12,7 +12,7 @@ git仓库：
 ## 协议设计
 1. TCP通信，设计了一个简单的包头，第一个4字节表示包长，第二个4字节表示协议ID，后面跟protobuf包体
 2. 在common里面定义了通用的错误码，消息id和通用错误消息包
-3. 使用bufio.NewScanner处理粘包问题
+3. 使用bufio.NewScanner的split处理粘包问题
 ## 服务器结构
 整个服务器分为3块：<b>中心服务器(CenterService)</b>，<b>聊天服务(ChatService)</b>和<b>网关服(Gateway)</b>
 1. 中心服务器目前是做成单节点，负责服务注册和服务发现，以及在线玩家的管理。
@@ -81,7 +81,14 @@ git仓库：
 5. viper：json文件读取
 
 ## 单元测试
-1. 进入test目录，执行go test
+1. 进入test目录，执行go test。测试覆盖了所有的关键算法，如:
+    1) 敏感词过滤
+    2) 高频词处理
+    3) 配置文件加载，配置项读取
+    4) 时间格式化
+    5) TrieTree测试
+    6) 控制台输入测试
+    7) 各个rpc接口测试
 2. grpc测试，在test/shell目录下，执行对应的shell
 
 ## API
