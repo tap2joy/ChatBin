@@ -9,10 +9,12 @@ git仓库：
 * https://github.com/tap2joy/ChatService.git 聊天服务
 * https://github.com/tap2joy/Gateway.git 网关服
 
-## 协议设计
+## 设计思路
 1. TCP通信，设计了一个简单的包头，第一个4字节表示包长，第二个4字节表示协议ID，后面跟protobuf包体
 2. 在common里面定义了通用的错误码，消息id和通用错误消息包
 3. 使用bufio.NewScanner的split处理粘包问题
+4. 用户名字唯一，用名字作为用户的唯一标识
+5. 尽量采用分布式，无状态服务，方便水平扩展
 ## 服务器结构
 整个服务器分为3块：<b>中心服务器(CenterService)</b>，<b>聊天服务(ChatService)</b>和<b>网关服(Gateway)</b>
 1. 中心服务器目前是做成单节点，负责服务注册和服务发现，以及在线玩家的管理。
