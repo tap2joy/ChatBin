@@ -91,7 +91,7 @@ git仓库：
     5) TrieTree测试
     6) 控制台输入测试
     7) 各个rpc接口测试
-2. grpc测试，在test/shell目录下，执行对应的shell
+2. grpc测试，使用的是grpcurl，在test/shell目录下，执行对应的shell
 
 ## API
 1. CenterService
